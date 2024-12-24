@@ -29,15 +29,15 @@ class _SplashViewBodyState extends State<SplashViewBody>with SingleTickerProvide
 
   void navigateToHome() {
       Future.delayed(const Duration(seconds:4),(){
-      Get.to(()=>HomePage(),transition:Transition.fade,duration:Duration(milliseconds: 500));
+      Get.to(()=>const HomePage(),transition:Transition.fade,duration:const Duration(milliseconds: 500));
     });
   }
 
   void InitSlidingAnimation() {
-     animationController=AnimationController(vsync:this,duration: Duration(seconds: 2));
+     animationController=AnimationController(vsync:this,duration: const Duration(seconds: 2));
        
        slidingAnimaion=Tween<Offset>(
-    begin: Offset(0,10),
+    begin: const Offset(0,10),
     end: Offset.zero
       ).animate(animationController);
      animationController.forward();
@@ -55,7 +55,7 @@ class _SplashViewBodyState extends State<SplashViewBody>with SingleTickerProvide
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
       Image.asset("assets/images/Logo.png"),
-      SizedBox(height: 10,),
+      const SizedBox(height: 10,),
        Sliding_Text(slidingAnimaion: slidingAnimaion)
         
       ],

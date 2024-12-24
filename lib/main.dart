@@ -18,6 +18,6 @@ class BooklyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor:Pcolor
       ),
-      home:SplashView()
+      home:const SplashView()
     );}}
       
