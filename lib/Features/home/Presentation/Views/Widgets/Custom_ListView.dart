@@ -11,7 +11,7 @@ class CustomBooksListView extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context,index){
-        return CustomListViewItem();
+        return const CustomListViewItem();
       }),
     );
   }

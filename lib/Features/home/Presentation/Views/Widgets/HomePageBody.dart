@@ -9,11 +9,17 @@ class HomePageBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-        children: [
-          CustomAppBar(),
-          CustomBooksListView()
-        ],
-      );
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal:20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CustomAppBar(),
+            CustomBooksListView(),
+            SizedBox(height: 50,),
+           Text("Best Seller",style: TextStyle(fontSize:20,fontWeight:FontWeight.w600))
+          ],
+        ),
+    );
   }
 }

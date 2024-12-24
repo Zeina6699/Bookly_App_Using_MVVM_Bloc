@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'package:get/get.dart';
 import 'package:bookly_app/Features/Splash/Presentaion/Views/Widgets/Sliding_Text.dart';
 import 'package:bookly_app/Features/home/Presentation/Views/Home_Page.dart';
