@@ -1,7 +1,6 @@
-import 'package:bookly_app/Features/home/Presentation/Views/Home_Page.dart';
+import 'package:bookly_app/Features/home/Presentation/Views/Widgets/BestSellerListViewItem.dart';
 import 'package:bookly_app/Features/home/Presentation/Views/Widgets/Custom_AppBar.dart';
 import 'package:bookly_app/Features/home/Presentation/Views/Widgets/Custom_ListView.dart';
-import 'package:bookly_app/Features/home/Presentation/Views/Widgets/Custom_ListViewItem.dart';
 import 'package:flutter/material.dart';
 
 class HomePageBody extends StatelessWidget {
@@ -17,7 +16,11 @@ class HomePageBody extends StatelessWidget {
             CustomAppBar(),
             CustomBooksListView(),
             SizedBox(height: 50,),
-           Text("Best Seller",style: TextStyle(fontSize:20,fontWeight:FontWeight.w600))
+            Text("Best Seller",style: TextStyle(fontSize:20,fontWeight:FontWeight.w600)),
+            SizedBox(height: 20,),
+            Bestsellerlistviewitem()
+
+         
           ],
         ),
     );
