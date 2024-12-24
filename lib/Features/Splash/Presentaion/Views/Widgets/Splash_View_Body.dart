@@ -1,5 +1,7 @@
-
-import 'package:bookly_app/Presentaion/Views/Widgets/Sliding_Text.dart';
+import 'dart:ffi';
+import 'package:get/get.dart';
+import 'package:bookly_app/Features/Splash/Presentaion/Views/Widgets/Sliding_Text.dart';
+import 'package:bookly_app/Features/home/Presentation/Views/Home_Page.dart';
 import 'package:flutter/material.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -18,14 +20,27 @@ class _SplashViewBodyState extends State<SplashViewBody>with SingleTickerProvide
   void initState() {
     // TODO: implement initState
     super.initState();
-    animationController=AnimationController(vsync:this,duration: const Duration(seconds: 2));
- 
-   slidingAnimaion=Tween<Offset>(
+
+    InitSlidingAnimation();
+    
+    navigateToHome();
+
+  }
+
+  void navigateToHome() {
+      Future.delayed(const Duration(seconds: 5),(){
+      Get.to(()=>const HomePage(),transition:Transition.fade,duration:const Duration(seconds: 5));
+    });
+  }
+
+  void InitSlidingAnimation() {
+     animationController=AnimationController(vsync:this,duration: const Duration(seconds: 2));
+       
+       slidingAnimaion=Tween<Offset>(
     begin: const Offset(0,10),
     end: Offset.zero
-  ).animate(animationController);
- animationController.forward();
-
+      ).animate(animationController);
+     animationController.forward();
   }
   @override
   void dispose() {
