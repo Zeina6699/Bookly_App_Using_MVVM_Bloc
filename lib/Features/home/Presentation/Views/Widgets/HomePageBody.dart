@@ -18,7 +18,8 @@ class HomePageBody extends StatelessWidget {
             SizedBox(height: 50,),
             Text("Best Seller",style: TextStyle(fontSize:20,fontWeight:FontWeight.w600)),
             SizedBox(height: 20,),
-            Bestsellerlistviewitem()
+            Bestsellerlistviewitem(),
+            
 
          
           ],
