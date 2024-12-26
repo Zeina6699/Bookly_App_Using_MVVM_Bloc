@@ -1,4 +1,4 @@
-import 'package:bookly_app/Features/home/Presentation/Views/Widgets/Custom_ListViewItem.dart';
+import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Custom_ListViewItem.dart';
 import 'package:flutter/material.dart';
 
 class RecommendedListView extends StatelessWidget {

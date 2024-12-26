@@ -1,4 +1,4 @@
-import 'package:bookly_app/Features/home/Presentation/Views/Widgets/Recommended_BooksListView.dart';
+import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Recommended_BooksListView.dart';
 import 'package:flutter/widgets.dart';
 
 class RecommendedBooksSection extends StatelessWidget {

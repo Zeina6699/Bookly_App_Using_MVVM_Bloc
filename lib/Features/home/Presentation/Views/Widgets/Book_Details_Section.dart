@@ -1,9 +1,9 @@
 import 'package:bookly_app/Constants.dart';
-import 'package:bookly_app/Features/home/Presentation/Views/Widgets/Books_Action.dart';
-import 'package:bookly_app/Features/home/Presentation/Views/Widgets/Custom_BookDetailsAppBar,dart';
-import 'package:bookly_app/Features/home/Presentation/Views/Widgets/Custom_ListViewItem.dart';
-import 'package:bookly_app/Features/home/Presentation/Views/Widgets/RatingBookly.dart';
-import 'package:bookly_app/Features/home/Presentation/Views/Widgets/Recommended_Book_Section.dart';
+import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Books_Action.dart';
+import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Custom_BookDetailsAppBar,dart';
+import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Custom_ListViewItem.dart';
+import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/RatingBookly.dart';
+import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Recommended_Book_Section.dart';
 import 'package:flutter/widgets.dart';
 
 class BookDetailsSection extends StatelessWidget {
