@@ -14,7 +14,7 @@ class RatingBook extends StatelessWidget {
         
         Text("4,8",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
         SizedBox(width:5),
-        Opacity(opacity:.6,child: Text("(265)",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600)))
+        Opacity(opacity:.4,child: Text("(265)",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600)))
          
         ] );
     }

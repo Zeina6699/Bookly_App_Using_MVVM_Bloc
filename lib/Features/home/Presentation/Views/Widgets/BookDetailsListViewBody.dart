@@ -1,4 +1,6 @@
 import 'package:bookly_app/Constants.dart';
+import 'package:bookly_app/Core/Utils/Custom_Button.dart';
+import 'package:bookly_app/Features/home/Presentation/Views/Widgets/Books_Action.dart';
 import 'package:bookly_app/Features/home/Presentation/Views/Widgets/Custom_ListViewItem.dart';
 import 'package:bookly_app/Features/home/Presentation/Views/Widgets/RatingBookly.dart';
 import 'package:flutter/material.dart';
@@ -10,25 +12,31 @@ class BookDetailsListViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
+      padding: EdgeInsets.symmetric(horizontal:10),
       child:  Column(
         children: [
           SafeArea(child: CustomBookDetailsAppBar()),
           SizedBox(
-            width: MediaQuery.of(context).size.width*.50,
-            child: CustomListViewItem()),
-            SizedBox(height: 37),
-            Text("The Jungle Book",style: TextStyle(fontFamily:KGtSectraFine ,fontSize: 30,fontWeight: FontWeight.bold)),
-            SizedBox(height: 3),
-            Opacity(
-              opacity: .7,
+            width:MediaQuery.of(context).size.width*.46,
+            child: const CustomListViewItem()),
+          const  SizedBox(height: 37),
+          const  Text("The Jungle Book",maxLines:1,style: TextStyle(fontFamily:KGtSectraFine ,fontSize: 30,fontWeight: FontWeight.bold)),
+          const  SizedBox(height:2),
+          const  Opacity(
+              opacity: .4,
               child: Text("Rudyard Kipling",style: TextStyle(
                 fontStyle: FontStyle.italic,
                 fontSize: 18,fontWeight: FontWeight.w600),),
             ),
-            SizedBox(height: 11),
-            RatingBook(mainAxis: MainAxisAlignment.center,)
+          const  SizedBox(height: 11),
+          const  RatingBook(mainAxis: MainAxisAlignment.center,)
+      ,     const  SizedBox(height:30),
 
+      
+       Padding(
+         padding: const EdgeInsets.symmetric(horizontal: 20),
+         child: const BooksAction(),
+       )
          
         ],
       ),
