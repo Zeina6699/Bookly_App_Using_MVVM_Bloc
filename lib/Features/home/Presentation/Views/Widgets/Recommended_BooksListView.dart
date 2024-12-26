@@ -1,8 +1,8 @@
 import 'package:bookly_app/Features/home/Presentation/Views/Widgets/Custom_ListViewItem.dart';
 import 'package:flutter/material.dart';
 
-class SimilarBookslistview extends StatelessWidget {
-  const SimilarBookslistview({super.key});
+class RecommendedListView extends StatelessWidget {
+  const RecommendedListView({super.key});
 
   @override
   Widget build(BuildContext context) {
