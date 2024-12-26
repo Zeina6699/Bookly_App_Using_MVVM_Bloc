@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:bookly_app/Features/Splash/Presentaion/Views/Widgets/Sliding_Text.dart';
 import 'package:bookly_app/Features/home/Presentation/Views/Home_View.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -28,7 +29,8 @@ class _SplashViewBodyState extends State<SplashViewBody>with SingleTickerProvide
 
   void navigateToHome() {
       Future.delayed(const Duration(seconds:4),(){
-      Get.to(()=>const HomeView(),transition:Transition.fade,duration:const Duration(milliseconds: 500));
+     // Get.to(()=>const HomeView(),transition:Transition.fade,duration:const Duration(milliseconds: 500));
+   GoRouter.of(context).push('/home');
     });
   }
 
