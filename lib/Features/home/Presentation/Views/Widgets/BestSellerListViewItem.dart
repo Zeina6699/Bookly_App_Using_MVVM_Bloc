@@ -43,7 +43,7 @@ class Bestsellerlistviewitem extends StatelessWidget {
                  Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                 Text("19.99 ",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                 Text("19.99 €",style: TextStyle(fontSize:22,fontWeight: FontWeight.bold),),
                 
                 RatingBook()
             

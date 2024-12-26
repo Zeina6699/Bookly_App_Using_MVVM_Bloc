@@ -1,5 +1,6 @@
 import 'package:bookly_app/Constants.dart';
 import 'package:bookly_app/Features/home/Presentation/Views/Widgets/Custom_ListViewItem.dart';
+import 'package:bookly_app/Features/home/Presentation/Views/Widgets/RatingBookly.dart';
 import 'package:flutter/material.dart';
 import 'Custom_BookDetailsAppBar,dart';
 
@@ -18,13 +19,15 @@ class BookDetailsListViewBody extends StatelessWidget {
             child: CustomListViewItem()),
             SizedBox(height: 37),
             Text("The Jungle Book",style: TextStyle(fontFamily:KGtSectraFine ,fontSize: 30,fontWeight: FontWeight.bold)),
-            SizedBox(height: 6),
+            SizedBox(height: 3),
             Opacity(
               opacity: .7,
               child: Text("Rudyard Kipling",style: TextStyle(
                 fontStyle: FontStyle.italic,
                 fontSize: 18,fontWeight: FontWeight.w600),),
-            )
+            ),
+            SizedBox(height: 11),
+            RatingBook(mainAxis: MainAxisAlignment.center,)
 
          
         ],
