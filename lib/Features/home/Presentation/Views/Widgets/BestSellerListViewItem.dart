@@ -8,14 +8,14 @@ class Bestsellerlistviewitem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height:150,
+      height:145,
       child: Row(
         children: [
           AspectRatio(
           aspectRatio: 1/1.6,
           child: Container(
             decoration:  BoxDecoration(
-              borderRadius: BorderRadius.circular(18),
+              borderRadius: BorderRadius.circular(15),
               color: Colors.red,
               image:const DecorationImage(
                 fit:BoxFit.fill,

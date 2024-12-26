@@ -8,7 +8,7 @@ class RatingBook extends StatelessWidget {
     Widget build(BuildContext context) {
       return const Row(
         children: [
-        Icon(FontAwesomeIcons.solidStar,color: const Color.fromARGB(255, 246, 234, 121)),
+        Icon(FontAwesomeIcons.solidStar,color: Color.fromARGB(255, 246, 234, 121)),
          SizedBox(width:9),
         
         Text("4,8",style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold),),
