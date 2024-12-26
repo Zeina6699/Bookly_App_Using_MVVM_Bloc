@@ -13,41 +13,41 @@ class BookDetailsListViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal:10),
-        child:  Column(
-          
-      
-          children: [
-            SafeArea(child: CustomBookDetailsAppBar()),
-            SizedBox(
-              width:MediaQuery.of(context).size.width*.46,
-              child: const CustomListViewItem()),
-            const  SizedBox(height: 37),
-            const  Text("The Jungle Book",maxLines:1,style: TextStyle(fontFamily:KGtSectraFine ,fontSize: 30,fontWeight: FontWeight.bold)),
-            const  SizedBox(height:2),
-            const  Opacity(
-                opacity: .4,
-                child: Text("Rudyard Kipling",style: TextStyle(
-                  fontStyle: FontStyle.italic,
-                  fontSize: 18,fontWeight: FontWeight.w600),),
-              ),
-            const  SizedBox(height: 11),
-            const  RatingBook(mainAxis: MainAxisAlignment.center,)
-        ,     const  SizedBox(height:30),
-      
-        
-         const Padding(
-           padding: EdgeInsets.symmetric(horizontal: 20),
-           child: BooksAction(),
-         ),const SizedBox(height:60),
-       const  Align(alignment:Alignment.centerLeft,child: Text("You can also like",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600))),
-         const SizedBox(height:20),
-           const SimilarBookslistview()
-          ],
-        ),
-      ),
-    );
+    return CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child:Padding(
+          padding: const EdgeInsets.symmetric(horizontal:10),
+          child:  Column(
+            children: [
+              SafeArea(child: CustomBookDetailsAppBar()),
+              SizedBox(
+                width:MediaQuery.of(context).size.width*.46,
+                child: const CustomListViewItem()),
+              const  SizedBox(height: 37),
+              const  Text("The Jungle Book",maxLines:1,style: TextStyle(fontFamily:KGtSectraFine ,fontSize: 30,fontWeight: FontWeight.bold)),
+              const  SizedBox(height:2),
+              const  Opacity(opacity: .4,child: Text("Rudyard Kipling",style: TextStyle(
+              fontStyle: FontStyle.italic,
+              fontSize: 18,fontWeight: FontWeight.w600),),
+                ),
+             const  SizedBox(height: 11),
+             const  RatingBook(mainAxis: MainAxisAlignment.center),
+             const  SizedBox(height:30),
+             const Padding(padding: EdgeInsets.symmetric(horizontal: 20),child: BooksAction()),
+             const SizedBox(height:10),
+             const  Align(alignment:Alignment.centerLeft,child: Text("You can also like",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600))),
+             const SizedBox(height:20),
+             const SimilarBookslistview()
+            ])),
+)]);
+  }}
+class BookDetailsSection extends StatelessWidget {
+  const BookDetailsSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
