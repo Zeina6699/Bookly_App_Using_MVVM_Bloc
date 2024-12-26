@@ -9,9 +9,9 @@ abstract class AppRouter {
 
 static  final router=GoRouter(
 routes: [
-GoRoute(path: '/',builder: (Context,state)=>SplashView()),
-GoRoute(path: '/home',builder: (Context,state)=>HomeView()),
-GoRoute(path: '/details',builder: (Context,state)=>BookDetailsView())
+GoRoute(path: '/',builder: (Context,state)=>const SplashView()),
+GoRoute(path: '/home',builder: (Context,state)=>const HomeView()),
+GoRoute(path: '/details',builder: (Context,state)=>const BookDetailsView())
 
 
 
