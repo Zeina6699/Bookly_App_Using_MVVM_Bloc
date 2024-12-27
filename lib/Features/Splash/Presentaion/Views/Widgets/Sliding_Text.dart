@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class Sliding_Text extends StatelessWidget {
@@ -12,14 +11,13 @@ class Sliding_Text extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-     animation: slidingAnimaion,
-      builder: (context,_) {
-        return SlideTransition(
-         position: slidingAnimaion,
-          child: const Text("Read Books For Free",
-           textAlign:TextAlign.center),
-        );
-      }
-    );
+        animation: slidingAnimaion,
+        builder: (context, _) {
+          return SlideTransition(
+            position: slidingAnimaion,
+            child:
+                const Text("Read Books For Free", textAlign: TextAlign.center),
+          );
+        });
   }
 }

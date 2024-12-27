@@ -33,6 +33,7 @@ dependencies:
     sdk: flutter
 
 dev_dependencies:
+  equatable: ^2.0.7
   flutter_lints: ^4.0.0
   flutter_test:
     sdk: flutter

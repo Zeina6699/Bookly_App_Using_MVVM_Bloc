@@ -8,23 +8,27 @@ class CustomSearchTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
-        enabledBorder: BuildOutlinedInputBorder(),
-        focusedBorder: BuildOutlinedInputBorder(),
-
-        hintText: "Search",
-        suffixIcon: Opacity(opacity:.7,child: IconButton(onPressed:(){},  icon:const Icon(FontAwesomeIcons.magnifyingGlass,size: 16,)))
-      ),
-
+          enabledBorder: BuildOutlinedInputBorder(),
+          focusedBorder: BuildOutlinedInputBorder(),
+          hintText: "Search",
+          suffixIcon: Opacity(
+              opacity: .7,
+              child: IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    FontAwesomeIcons.magnifyingGlass,
+                    size: 16,
+                  )))),
     );
   }
 
   OutlineInputBorder BuildOutlinedInputBorder() {
     return OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(color: Colors.white)
-      );
+        borderSide: const BorderSide(color: Colors.white));
   }
 }
+
 class SearchResultListView extends StatelessWidget {
   const SearchResultListView({super.key});
 

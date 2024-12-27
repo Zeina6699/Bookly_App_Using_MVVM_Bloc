@@ -8,11 +8,12 @@ class RecommendedBooksSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-            Align(
-              alignment:Alignment.centerLeft,
-              child: Text("You can also like",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600))),
-            SizedBox(height:20),
-            RecommendedListView(),
+        Align(
+            alignment: Alignment.centerLeft,
+            child: Text("You can also like",
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600))),
+        SizedBox(height: 20),
+        RecommendedListView(),
       ],
     );
   }
