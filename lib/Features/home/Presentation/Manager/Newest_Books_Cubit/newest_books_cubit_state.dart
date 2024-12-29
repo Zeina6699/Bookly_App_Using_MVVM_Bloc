@@ -8,7 +8,7 @@ abstract class NewestBooksCubitState extends Equatable {
 }
 
 class NewestBooksCubitInitial extends NewestBooksCubitState {}
-class NewestBooksCubitLoadind extends NewestBooksCubitState {}
+class NewestBooksCubitLoading extends NewestBooksCubitState {}
 
 
 class NewestBooksCubitSucces extends NewestBooksCubitState {
