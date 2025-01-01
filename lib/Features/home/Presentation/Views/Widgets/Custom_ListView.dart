@@ -13,29 +13,30 @@ class CustomBooksListView extends StatelessWidget {
       builder: (context, state) {
 
 
-        if (state is FeaturedBooksSuccess) {
+       if (state is FeaturedBooksSuccess) {
   return SizedBox(
     height: MediaQuery.of(context).size.height * .38,
     child: ListView.builder(
+      itemCount: state.books.length,
+      physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return const Padding(
-            padding: EdgeInsets.only(right: 16),
-            child: CustomListViewItem(),
+          return Padding(
+            padding: const EdgeInsets.only(right: 16),
+            child: CustomListViewItem(imageURL:state.books[index].volumeInfo.imageLinks.thumbnail),
           );
-        }),
-  );
+        }
+  ));}
+
+        
 
 
-
-}
-
+      
 else if(state is FeaturedBooksFailure){
 return CustomErrorWidget(errorMessage: state.errorMessage);
 }
 
       
-    else{return const CircularLoadingIndecator();
-    }  });
-  }
-}
+   else{return const CircularLoadingIndecator();
+    } 
+  });}}
