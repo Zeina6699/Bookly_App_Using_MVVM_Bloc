@@ -1,4 +1,4 @@
-import 'dart:ui';
+import 'package:flutter/material.dart';
 
-const Pcolor = Color(0xff100B20);
-const KGtSectraFine = "GT Sectra Fine";
+const kPrimaryColor = Color(0xff100B20);
+const kGtSectraFine = 'GT Sectra Fine';

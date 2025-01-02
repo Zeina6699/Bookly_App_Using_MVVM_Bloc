@@ -12,9 +12,7 @@ class SearchViewBody extends StatelessWidget {
       child: Column(
         children: [
           SafeArea(child: CustomSearchTextField()),
-          SizedBox(
-            height: 20,
-          ),
+          SizedBox(height: 20,),
           Align(
               alignment: Alignment.centerLeft,
               child: Text("Search Result",
@@ -35,7 +33,7 @@ class SearchResultListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        shrinkWrap: true,
+       // shrinkWrap: true,
         //  physics: const NeverScrollableScrollPhysics(),
         padding: EdgeInsets.zero,
         itemCount: 10,

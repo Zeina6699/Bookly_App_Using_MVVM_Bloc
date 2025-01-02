@@ -14,13 +14,10 @@ class CustomAppBar extends StatelessWidget {
         children: [
           Image.asset("assets/images/Logo.png", height: 25),
           IconButton(
-              onPressed: () {
-                GoRouter.of(context).push('/search');
-              },
+              onPressed: () {GoRouter.of(context).push('/search');},
               icon: const Icon(
                 FontAwesomeIcons.magnifyingGlass,
-                size: 16,
-              ))
+                size: 16,))
         ],
       ),
     );

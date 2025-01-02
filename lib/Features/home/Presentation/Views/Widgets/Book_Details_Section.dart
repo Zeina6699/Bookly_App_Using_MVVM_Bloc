@@ -14,12 +14,14 @@ class BookDetailsSection extends StatelessWidget {
         const SafeArea(child: CustomBookDetailsAppBar()),
         SizedBox(
             width: MediaQuery.of(context).size.width * .46,
-            child: const CustomListViewItem()),
-        const SizedBox(height: 37),
+            child: const CustomListViewItem(imageURL: 
+            
+                'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png'))  
+                ,  const SizedBox(height: 37),
         const Text("The Jungle Book",
             maxLines: 1,
             style: TextStyle(
-                fontFamily: KGtSectraFine,
+                fontFamily: kGtSectraFine,
                 fontSize: 30,
                 fontWeight: FontWeight.bold)),
         const SizedBox(height: 2),

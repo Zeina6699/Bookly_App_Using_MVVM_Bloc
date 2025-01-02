@@ -1,15 +1,30 @@
-import 'package:bookly_app/Features/Search/Presentation/Views/Search_View.dart';
 import 'package:bookly_app/Features/Splash/Presentaion/Views/Splash_View.dart';
-import 'package:bookly_app/Features/Home/Presentation/Views/Book_Details_View.dart';
-import 'package:bookly_app/Features/Home/Presentation/Views/Home_View.dart';
+import 'package:bookly_app/Features/home/presentation/Views/book_details_view.dart';
+import 'package:bookly_app/Features/home/presentation/Views/home_view.dart';
+import 'package:bookly_app/Features/search/presentation/views/search_view.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
-  static final router = GoRouter(routes: [
-    GoRoute(path: '/', builder: (Context, state) => const SplashView()),
-    GoRoute(path: '/home', builder: (Context, state) => const HomeView()),
-    GoRoute(
-        path: '/details', builder: (Context, state) => const BookDetailsView()),
-    GoRoute(path: '/search', builder: (Context, state) => const SearchView()),
-  ]);
+
+
+  static final router = GoRouter(
+    routes: [
+      GoRoute(
+        path: '/',
+        builder: (context, state) => const SplashView(),
+      ),
+      GoRoute(
+        path: "/search",
+        builder: (context, state) => const SearchView(),
+      ),
+      GoRoute(
+        path: '/home',
+        builder: (context, state) => const HomeView(),
+      ),
+      GoRoute(
+        path: '/details',
+        builder: (context, state) => const BookDetailsView(),
+      ),
+    ],
+  );
 }
