@@ -37,6 +37,10 @@ return CustomErrorWidget(errorMessage: state.errMessage);
 }
 
       
+<<<<<<< HEAD
   else{return const CircularLoadingIndecator();
+=======
+   else{return const CircularLoadingIndecator();
+>>>>>>> 17cd4fbb25e82f5c0726038907092082ad9f30e8
     } 
   });}}
