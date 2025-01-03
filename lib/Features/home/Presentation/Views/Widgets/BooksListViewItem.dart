@@ -1,10 +1,14 @@
-import 'package:bookly_app/Constants.dart';
-import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/RatingBookly.dart';
-import 'package:flutter/material.dart';
+import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Custom_ListViewItem.dart';
+import 'package:bookly_app/Features/home/presentation/Views/Widgets/RatingBookly.dart';
+import 'package:bookly_app/constants.dart';
 import 'package:go_router/go_router.dart';
 
+import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
+import 'package:flutter/material.dart';
+
 class Bestsellerlistviewitem extends StatelessWidget {
-  const Bestsellerlistviewitem({super.key});
+  const Bestsellerlistviewitem({super.key,required this.bookModel});
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +19,8 @@ class Bestsellerlistviewitem extends StatelessWidget {
       child: SizedBox(
           height: 145,
           child: Row(children: [
-            AspectRatio(
+            CustomListViewItem(imageURL: bookModel.volumeInfo.imageLinks.thumbnail)
+         /*   AspectRatio(
               aspectRatio: 1 / 1.6,
               child: Container(
                 decoration: BoxDecoration(
@@ -25,36 +30,44 @@ class Bestsellerlistviewitem extends StatelessWidget {
                         fit: BoxFit.fill,
                         image: AssetImage("assets/images/test.png"))),
               ),
-            ),
-            const SizedBox(
+            ),*/
+            ,const SizedBox(
               width: 30,
             ),
-            const Expanded(
+           Expanded(
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Harry Potter and the \nGoblet of Fire", //minLines: 2,//overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
+                      maxLines: 2,
+                      bookModel.volumeInfo.title!,
+                      overflow: TextOverflow.ellipsis,
+                     // "Harry Potter and the \nGoblet of Fire", //minLines: 2,//overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
                           fontSize: 23,
                           fontFamily: kGtSectraFine,
                           fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(height: 8),
-                    Text(
-                      "J.K Rowling",
+                const    SizedBox(height: 8),
+                  Text(
+                  bookModel.volumeInfo.authors![0],
+                     // "J.K Rowling",
                       style: TextStyle(fontSize: 15),
                     ),
-                    SizedBox(height: 5),
-                    Row(
+               const     SizedBox(height: 5),
+                 Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "19.99 €",
+                          "Free",
+                          //  "19.99 €",
                             style: TextStyle(
                                 fontSize: 22, fontWeight: FontWeight.bold),
                           ),
-                          RatingBook()
+                          RatingBook(
+                            rating: bookModel.volumeInfo.averageRating??0,
+                            count: bookModel.volumeInfo.ratingsCount??0,
+                          )
                         ])
                   ]),
             )
