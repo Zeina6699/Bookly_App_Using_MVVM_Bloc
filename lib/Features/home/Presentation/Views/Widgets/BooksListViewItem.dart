@@ -19,7 +19,7 @@ class Bestsellerlistviewitem extends StatelessWidget {
       child: SizedBox(
           height: 145,
           child: Row(children: [
-            CustomListViewItem(imageURL: bookModel.volumeInfo.imageLinks.thumbnail)
+            CustomListViewItem(imageURL: bookModel.volumeInfo.imageLinks?.thumbnail??'')
          /*   AspectRatio(
               aspectRatio: 1 / 1.6,
               child: Container(
@@ -51,6 +51,7 @@ class Bestsellerlistviewitem extends StatelessWidget {
                 const    SizedBox(height: 8),
                   Text(
                   bookModel.volumeInfo.authors![0],
+                  maxLines: 1,
                      // "J.K Rowling",
                       style: TextStyle(fontSize: 15),
                     ),
@@ -65,7 +66,7 @@ class Bestsellerlistviewitem extends StatelessWidget {
                                 fontSize: 22, fontWeight: FontWeight.bold),
                           ),
                           RatingBook(
-                            rating: bookModel.volumeInfo.averageRating??0,
+                            rating: bookModel.volumeInfo.averageRating?.round()??0,
                             count: bookModel.volumeInfo.ratingsCount??0,
                           )
                         ])
