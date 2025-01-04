@@ -1,7 +1,7 @@
 import 'package:bookly_app/Constants.dart';
-import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Custom_BookDetailsAppBar.dart';
-import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Custom_ListViewItem.dart';
-import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/RatingBookly.dart';
+import 'package:bookly_app/Features/Home/presentation/views/widgets/Custom_Book_Details_AppBar.dart';
+import 'package:bookly_app/Features/Home/presentation/views/widgets/Custom_Book_Image.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/book_rating.dart';
 import 'package:flutter/widgets.dart';
 
 class BookDetailsSection extends StatelessWidget {
@@ -14,7 +14,7 @@ class BookDetailsSection extends StatelessWidget {
         const SafeArea(child: CustomBookDetailsAppBar()),
         SizedBox(
             width: MediaQuery.of(context).size.width * .46,
-            child: const CustomListViewItem(imageURL: 
+            child: const CustomBookImage(imageUrl: 
             
                 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png'))  
                 ,  const SizedBox(height: 37),
@@ -36,11 +36,14 @@ class BookDetailsSection extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 11),
-        const RatingBook(
-          rating:5,
-          count:240,
-          
-          mainAxis: MainAxisAlignment.center),
+       const Padding(
+          padding: const EdgeInsets.only(left:150),
+          child: const BookRating(
+            rating:5,
+            count:240,
+            mainAxis: MainAxisAlignment.center
+           ),
+        ),
       ],
     );
   }

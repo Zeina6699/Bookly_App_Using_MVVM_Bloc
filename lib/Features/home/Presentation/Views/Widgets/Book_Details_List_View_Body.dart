@@ -1,6 +1,6 @@
 import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Book_Details_Section.dart';
 import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Books_Action.dart';
-import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Recommended_Book_Section.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/Recommended_Books_Section.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsListViewBody extends StatelessWidget {

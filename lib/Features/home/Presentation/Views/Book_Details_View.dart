@@ -1,11 +1,33 @@
-import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/BookDetailsListViewBody.dart';
+import 'package:bookly_app/Features/Home/presentation/views/widgets/Book_Details_List_View_Body.dart';
+import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
+import 'package:bookly_app/Features/home/presentation/manger/smila_books_cubit/Recommended_Books_Cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class BookDetailsView extends StatelessWidget {
-  const BookDetailsView({super.key});
+class BookDetailsView extends StatefulWidget {
+  const BookDetailsView({super.key, required this.bookModel});
+
+  final BookModel bookModel;
+  @override
+  State<BookDetailsView> createState() => _BookDetailsViewState();
+}
+
+class _BookDetailsViewState extends State<BookDetailsView> {
+  @override
+  void initState() {
+    BlocProvider.of<RecommendedBooksCubit>(context).fetchRecommendedBooks(
+        category: widget.bookModel.volumeInfo.categories![0]);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: BookDetailsListViewBody());
+    return const Scaffold(
+      body: SafeArea(
+        child: BookDetailsListViewBody()
+      ),
+    );
   }
 }

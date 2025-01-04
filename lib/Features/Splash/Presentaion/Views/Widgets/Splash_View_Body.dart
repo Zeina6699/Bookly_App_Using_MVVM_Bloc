@@ -58,7 +58,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
         const SizedBox(
           height: 10,
         ),
-        Sliding_Text(slidingAnimaion: slidingAnimaion)
+        SlidingText(slidingAnimaion: slidingAnimaion)
       ],
     );
   }

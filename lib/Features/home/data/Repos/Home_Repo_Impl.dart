@@ -1,11 +1,9 @@
-
-import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
-import 'package:bookly_app/Features/home/data/repos/home_repo.dart';
-import 'package:bookly_app/core/Errors/Failures.dart';
-import 'package:bookly_app/core/Utils/Api_Service.dart';
-import 'package:dartz/dartz.dart';
-
 import 'package:dio/dio.dart';
+import 'package:bookly_app/Features/home/data/repos/home_repo.dart';
+import 'package:bookly_app/core/utils/api_service.dart';
+import 'package:dartz/dartz.dart';
+import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
+import 'package:bookly_app/core/errors/Failures.dart';
 
 class HomeRepoImpl implements HomeRepo {
   final ApiService apiService;
@@ -20,15 +18,14 @@ class HomeRepoImpl implements HomeRepo {
       List<BookModel> books = [];
       for (var item in data['items']) {
         try {
-  books.add(BookModel.fromJson(item));
-} on Exception catch (e) {
-  // TODO
-}
+          books.add(BookModel.fromJson(item));
+        } catch (e) {
+          books.add(BookModel.fromJson(item));
+        }
       }
 
       return right(books);
     } catch (e) {
-       left(ServerFailure(e.toString()));
       if (e is DioException) {
         return left(
           ServerFailure.fromDioError(e),
@@ -67,10 +64,13 @@ class HomeRepoImpl implements HomeRepo {
     }
   }
 
-  Future<Either<Failure, List<BookModel>>> fetchRecommendededBooks({required String category}) async {
+  @override
+  Future<Either<Failure, List<BookModel>>> fetchRecommendedBooks(
+      {required String category}) async {
     try {
       var data = await apiService.get(
-          endPoint: 'volumes?Filtering=free-ebooks&q=subject:Programming');
+          endPoint:
+              'volumes?Filtering=free-ebooks&Sorting=relevance &q=subject:Programming');
       List<BookModel> books = [];
       for (var item in data['items']) {
         books.add(BookModel.fromJson(item));
@@ -90,5 +90,4 @@ class HomeRepoImpl implements HomeRepo {
       );
     }
   }
-
-    }
+}

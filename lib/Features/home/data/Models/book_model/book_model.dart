@@ -1,4 +1,3 @@
-// ignore: depend_on_referenced_packages
 import 'package:equatable/equatable.dart';
 
 import 'access_info.dart';
@@ -32,7 +31,8 @@ class BookModel extends Equatable {
         id: json['id'] as String?,
         etag: json['etag'] as String?,
         selfLink: json['selfLink'] as String?,
-        volumeInfo:VolumeInfo.fromJson(json['volumeInfo'] as Map<String, dynamic>),
+        volumeInfo:
+            VolumeInfo.fromJson(json['volumeInfo'] as Map<String, dynamic>),
         saleInfo: json['saleInfo'] == null
             ? null
             : SaleInfo.fromJson(json['saleInfo'] as Map<String, dynamic>),
@@ -49,7 +49,7 @@ class BookModel extends Equatable {
         'id': id,
         'etag': etag,
         'selfLink': selfLink,
-        'volumeInfo': volumeInfo.toJson(),
+        'volumeInfo': volumeInfo?.toJson(),
         'saleInfo': saleInfo?.toJson(),
         'accessInfo': accessInfo?.toJson(),
         'searchInfo': searchInfo?.toJson(),
