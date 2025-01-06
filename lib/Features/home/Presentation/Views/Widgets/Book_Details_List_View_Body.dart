@@ -18,9 +18,9 @@ class BookDetailsListViewBody extends StatelessWidget {
             child: Column(children: [
               BookDetailsSection(book: bookModel),
               const SizedBox(height: 30),
-              const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: BooksAction()),
+               Padding(
+                  padding:const EdgeInsets.symmetric(horizontal: 20),
+                  child: BooksAction(bookModel: bookModel)),
               const SizedBox(height: 50),
               const RecommendedBooksSection(
 

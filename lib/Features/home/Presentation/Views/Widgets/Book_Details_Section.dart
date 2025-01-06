@@ -48,9 +48,9 @@ class BookDetailsSection extends StatelessWidget {
        Padding(
           padding:  EdgeInsets.only(left:150),
           child:BookRating(
-            rating:book.volumeInfo.averageRating??0,
+            rating:book.volumeInfo.averageRating??2,
             //5,
-            count:book.volumeInfo.ratingsCount??0,
+            count:book.volumeInfo.ratingsCount??100,
             //240,
             mainAxis: MainAxisAlignment.center
            ),

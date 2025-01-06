@@ -1,4 +1,4 @@
-
+import 'package:go_router/go_router.dart';
 import 'package:bookly_app/Features/Home/Presentation/Manager/recommended_books_cubit/Recommended_Books_Cubit.dart';
 import 'package:bookly_app/Features/Home/presentation/views/widgets/Custom_Book_Image.dart';
 import 'package:bookly_app/core/widgets/Custom_Circular_Indecator.dart';
@@ -24,8 +24,12 @@ class RecommendedBooksListView extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Padding(
                     padding:  EdgeInsets.symmetric(horizontal: 5),
-                    child: CustomBookImage(
-                      imageUrl:state.books[index].volumeInfo.imageLinks?.thumbnail??''                    ),
+                    child: GestureDetector(
+            onTap: () { GoRouter.of(context).push('/details',extra:state.books[index]);},
+
+                      child: CustomBookImage(
+                        imageUrl:state.books[index].volumeInfo.imageLinks?.thumbnail??''                    ),
+                    ),
                   );
                 }),
           );
