@@ -1,11 +1,9 @@
-
-import 'package:bookly_app/Features/home/presentation/manger/newest_books_cubit/newset_books_cubit.dart';
+import 'package:bookly_app/Features/Home/Presentation/Manager/newest_books_cubit/newset_books_cubit.dart';
+import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Newest_Books_Item.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bookly_app/core/widgets/Custom_Circular_Indecator.dart';
 import 'package:bookly_app/core/widgets/Custom_Error_Widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'Newest_Books_Item.dart';
 
 class NewestBooksListView extends StatelessWidget {
   const NewestBooksListView({super.key});
@@ -21,9 +19,9 @@ class NewestBooksListView extends StatelessWidget {
             itemCount: state.books.length,
             itemBuilder: (context, index) {
               return Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10),
-                child: NewestBooksItem(
-                  bookModel: state.books[index],
+                padding:const  EdgeInsets.symmetric(vertical: 10),
+                child: NewestBooksItem(bookModel: state.books[index],
+                 
                 ),
               );
             },

@@ -1,6 +1,6 @@
 
 import 'package:bookly_app/Features/Home/presentation/views/widgets/Custom_AppBar.dart';
-import 'package:bookly_app/Features/home/presentation/views/widgets/Featured_Books_List_View.dart';
+import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Featured_Books_List_View.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'Newest_Books_List_View.dart';

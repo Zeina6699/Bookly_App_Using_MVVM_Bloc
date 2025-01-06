@@ -1,6 +1,7 @@
-
+import 'package:go_router/go_router.dart';
+import 'package:bookly_app/Features/Home/Presentation/Manager/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly_app/Features/Home/presentation/views/widgets/Custom_Book_Image.dart';
-import 'package:bookly_app/Features/home/presentation/manger/featured_books_cubit/featured_books_cubit.dart';
+import 'package:bookly_app/core/Utils/app_router.dart';
 import 'package:bookly_app/core/widgets/Custom_Circular_Indecator.dart';
 import 'package:bookly_app/core/widgets/Custom_Error_Widget.dart';
 import 'package:flutter/material.dart';
@@ -25,20 +26,22 @@ class FeaturedBooksListView extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8),
-                    child: CustomBookImage(
-                      imageUrl:
-                          state.books[index].volumeInfo.imageLinks?.thumbnail ??
-                              '',
-                    ),
-                  );
-                }),
-          );
-        } else if (state is FeaturedBooksFailure) {
+                    child: GestureDetector(
+                         onTap: () { GoRouter.of(context).push('/details',extra:state.books[index]);},
+                      child: CustomBookImage(
+                        imageUrl:
+                            state.books[index].volumeInfo.imageLinks?.thumbnail ??'',
+                      ),
+                    ));}));}
+                  
+                
+          
+        else if (state is FeaturedBooksFailure) {
           return CustomErrorWidget(errorMessage: state.errMessage);
         } else {
           return const CustomCircularIndecator();
         }
-      },
-    );
+      });
+    
   }
 }

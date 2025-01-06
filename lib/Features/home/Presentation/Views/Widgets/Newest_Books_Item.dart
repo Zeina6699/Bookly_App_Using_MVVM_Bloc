@@ -1,17 +1,18 @@
 
-import 'package:bookly_app/Features/Home/presentation/views/widgets/Custom_Book_Image.dart';
-import 'package:bookly_app/Features/home/data/models/book_model/book_model.dart';
-import 'package:bookly_app/constants.dart';
-import 'package:bookly_app/core/utils/app_router.dart';
+
+import 'package:bookly_app/Constants.dart';
+import 'package:bookly_app/Features/Home/Presentation/Views/Widgets/Custom_Book_Image.dart';
+import 'package:bookly_app/Features/Home/data/models/bookModel/book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'book_rating.dart';
 
+  
 class NewestBooksItem extends StatelessWidget {
-  const NewestBooksItem({super.key, required this.bookModel});
-
-  final BookModel bookModel;
+  const NewestBooksItem({super.key,required this.bookModel});
+   final BookModel bookModel;
+  
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

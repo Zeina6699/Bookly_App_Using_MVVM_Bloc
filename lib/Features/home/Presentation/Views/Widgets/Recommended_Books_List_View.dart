@@ -1,6 +1,6 @@
 
+import 'package:bookly_app/Features/Home/Presentation/Manager/recommended_books_cubit/Recommended_Books_Cubit.dart';
 import 'package:bookly_app/Features/Home/presentation/views/widgets/Custom_Book_Image.dart';
-import 'package:bookly_app/Features/home/presentation/manger/smila_books_cubit/Recommended_Books_Cubit.dart';
 import 'package:bookly_app/core/widgets/Custom_Circular_Indecator.dart';
 import 'package:bookly_app/core/widgets/Custom_Error_Widget.dart';
 import 'package:flutter/material.dart';
@@ -19,14 +19,13 @@ class RecommendedBooksListView extends StatelessWidget {
           return SizedBox(
             height: MediaQuery.of(context).size.height * .20,
             child: ListView.builder(
+              itemCount:state.books.length  ,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 5),
+                  return Padding(
+                    padding:  EdgeInsets.symmetric(horizontal: 5),
                     child: CustomBookImage(
-                      imageUrl:
-                          'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png',
-                    ),
+                      imageUrl:state.books[index].volumeInfo.imageLinks?.thumbnail??''                    ),
                   );
                 }),
           );
